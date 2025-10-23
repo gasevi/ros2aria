@@ -164,20 +164,24 @@ include_directories(
   lib/AriaCoda/include/
 )
 
+#add_executable(ros2aria
+#  src/main.cpp
+#  src/ros2aria.cpp
+#  src/raiibot.cpp
+#  src/cmd_vel.cpp
+#  src/publish.cpp
+#  src/sonar.cpp
+#  src/pose.cpp
+#  src/gripper.cpp
+#  src/wheels.cpp
+#  src/clutch.cpp
+#  src/state.cpp
+#  src/restrictions.cpp
+#  src/scan.cpp
+#)
+
 add_executable(ros2aria
-  src/main.cpp
-  src/ros2aria.cpp
-  src/raiibot.cpp
-  src/cmd_vel.cpp
-  src/publish.cpp
-  src/sonar.cpp
-  src/pose.cpp
-  src/gripper.cpp
-  src/wheels.cpp
-  src/clutch.cpp
-  src/state.cpp
-  src/restrictions.cpp
-  src/scan.cpp
+  src/RosAria.cpp
 )
 
 target_include_directories(ros2aria PRIVATE
@@ -223,5 +227,8 @@ ament_export_include_directories(
   include
   lib/AriaCoda/include
 )
+
+# Install launch files
+install( DIRECTORY launch DESTINATION share/${PROJECT_NAME}/ )
 
 ament_package()

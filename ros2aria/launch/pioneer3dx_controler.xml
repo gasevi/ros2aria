@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- RosAia -->
+  <node pkg="ros2aria" exec="ros2aria" name="ros2aria" output="screen" >
+    <param name="port" value="/dev/ttyUSB0" />
+    <remap from="RosAria/cmd_vel" to="cmd_vel" />
+    <remap from="RosAria/pose" to="odom" />
+    <remap from="RosAria/bumper_state" to="bumper_state" />
+    <remap from="RosAria/sonar" to="sonar" />
+    <remap from="RosAria/sonar_pointcloud2" to="sonar_pointcloud2" />
+    <remap from="RosAria/battery_state_of_charge" to="battery_state_of_charge" />
+    <remap from="RosAria/battery_voltage" to="battery_voltage" />
+    <remap from="RosAria/battery_recharge_state" to="battery_recharge_state" />
+    <remap from="RosAria/motors_state" to="motors_state" />
+  </node>
+
+</launch>
+
