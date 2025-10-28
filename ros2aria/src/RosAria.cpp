@@ -333,7 +333,7 @@ RosAriaNode::RosAriaNode()
   // other argmuments (optional) are callbacks, or a boolean "latch" flag (whether to send current data to new
   // subscribers when they subscribe).
   // See ros::NodeHandle API docs.
-  pose_pub = this->create_publisher<nav_msgs::msg::Odometry>( "pose", 1000 );
+  pose_pub = this->create_publisher<nav_msgs::msg::Odometry>( "odom", 1000 );
   bumpers_pub = this->create_publisher<ros2aria_msgs::msg::BumperState>( "bumper_state", 1000 );
   voltage_pub = this->create_publisher<std_msgs::msg::Float64>( "battery_voltage", 1000 );
   recharge_state_pub = this->create_publisher<std_msgs::msg::Int8>("battery_recharge_state", 5 );
